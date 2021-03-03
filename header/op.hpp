@@ -11,6 +11,7 @@ class Op : public Base {
         virtual double evaluate() { return val; }
         virtual std::string stringify() { return std::to_string(val); }
 	virtual int number_of_children(){ return 0;} 
+	virtual Base* get_child(int i){}
 };
 
 #endif //__OP_HPP___
