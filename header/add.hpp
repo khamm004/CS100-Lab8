@@ -27,6 +27,18 @@ class Add : public Base {
 				return right;
 			}
         	}
+		void accept(Visitor* visitor, int index){
+			if(index == 0){
+				visitor->visit_add_begin(this);
+			}
+			else if(index == 1){
+				visitor->visit_add_middle(this);
+			}
+			else{
+				visitor->visit_add_end(this);
+			}
+       		 }
+
 
 
 };

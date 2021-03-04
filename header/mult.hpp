@@ -24,6 +24,18 @@ class Mult : public Base {
 			return right;
 		}
          }
+	void accept(Visitor* visitor, int index){
+		if(index == 0){
+			visitor->visit_mult_begin(this);
+		}
+		else if(index == 1){
+			visitor->visit_mult_middle(this);
+		}
+		else{
+			visitor->visit_mult_end(this);
+		}
+        }
+
 };
 
 #endif //__MULT_HPP__
